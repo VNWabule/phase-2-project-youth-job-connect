@@ -1,106 +1,115 @@
 {
-    "jobs": [
-      {
-        "id": 1,
-        "title": "Grocery Store Bagger",
-        "company": "Friendly Foods",
-        "location": "Main Street",
-        "ageRequirement": 15,
-        "pay": "$10/hr",
-        "description": "Help customers bag groceries and return carts.",
-        "category": "Retail"
-      },
-      {
-        "id": 2,
-        "title": "Lifeguard",
-        "company": "City Pool",
-        "location": "Community Center",
-        "ageRequirement": 16,
-        "pay": "$13/hr",
-        "description": "Monitor pool safety and assist swimmers.",
-        "category": "Recreation"
-      },
-      {
-        "id": 3,
-        "title": "Library Assistant",
-        "company": "Downtown Public Library",
-        "location": "Downtown",
-        "ageRequirement": 16,
-        "pay": "$11/hr",
-        "description": "Help reshelve books, manage check-outs, and assist patrons.",
-        "category": "Education"
-      },
-      {
-        "id": 4,
-        "title": "Camp Counselor",
-        "company": "Adventure Kids Camp",
-        "location": "Lakeside Park",
-        "ageRequirement": 17,
-        "pay": "$12/hr",
-        "description": "Lead activities and supervise campers during day camp programs.",
-        "category": "Recreation"
-      },
-      {
-        "id": 5,
-        "title": "Pet Sitter",
-        "company": "Neighborhood Services",
-        "location": "Various Homes",
-        "ageRequirement": 14,
-        "pay": "$20 per visit",
-        "description": "Take care of pets while owners are away: feeding, walking, and playtime.",
-        "category": "Pet Services"
-      },
-      {
-        "id": 6,
-        "title": "Ice Cream Server",
-        "company": "Sweet Treats",
-        "location": "Mall Food Court",
-        "ageRequirement": 15,
-        "pay": "$10.50/hr",
-        "description": "Serve customers, clean workstations, and prep toppings.",
-        "category": "Food Service"
-      },
-      {
-        "id": 7,
-        "title": "Movie Theater Attendant",
-        "company": "Starplex Cinemas",
-        "location": "CineMall 8",
-        "ageRequirement": 16,
-        "pay": "$11/hr",
-        "description": "Tear tickets, help guests, and maintain clean theaters.",
-        "category": "Entertainment"
-      },
-      {
-        "id": 8,
-        "title": "Cashier",
-        "company": "Dollar Deals",
-        "location": "Eastside Plaza",
-        "ageRequirement": 16,
-        "pay": "$12/hr",
-        "description": "Operate cash register, restock shelves, and greet customers.",
-        "category": "Retail"
-      },
-      {
-        "id": 9,
-        "title": "Landscaping Assistant",
-        "company": "Green Grounds",
-        "location": "Residential Neighborhoods",
-        "ageRequirement": 17,
-        "pay": "$14/hr",
-        "description": "Mow lawns, trim hedges, and assist with yard cleanup.",
-        "category": "Outdoor Work"
-      },
-      {
-        "id": 10,
-        "title": "Tutor (Math or Reading)",
-        "company": "Youth Learning Center",
-        "location": "Learning Hub",
-        "ageRequirement": 16,
-        "pay": "$13/hr",
-        "description": "Work one-on-one with elementary students on core subjects.",
-        "category": "Education"
-      }
-    ],
-    "applications": []
-  }
-  
+  "jobs": [
+    {
+      "id": "1",
+      "title": "Grocery Store Bagger",
+      "company": "Friendly Foods",
+      "location": "Main Street",
+      "ageRequirement": 15,
+      "pay": "$10/hr",
+      "description": "Help customers bag groceries and return carts.",
+      "category": "Retail"
+    },
+    {
+      "id": "2",
+      "title": "Lifeguard",
+      "company": "City Pool",
+      "location": "Community Center",
+      "ageRequirement": 16,
+      "pay": "$13/hr",
+      "description": "Monitor pool safety and assist swimmers.",
+      "category": "Recreation"
+    },
+    {
+      "id": "3",
+      "title": "Library Assistant",
+      "company": "Downtown Public Library",
+      "location": "Downtown",
+      "ageRequirement": 16,
+      "pay": "$11/hr",
+      "description": "Help reshelve books, manage check-outs, and assist patrons.",
+      "category": "Education"
+    },
+    {
+      "id": "4",
+      "title": "Camp Counselor",
+      "company": "Adventure Kids Camp",
+      "location": "Lakeside Park",
+      "ageRequirement": 17,
+      "pay": "$12/hr",
+      "description": "Lead activities and supervise campers during day camp programs.",
+      "category": "Recreation"
+    },
+    {
+      "id": "5",
+      "title": "Pet Sitter",
+      "company": "Neighborhood Services",
+      "location": "Various Homes",
+      "ageRequirement": 14,
+      "pay": "$20 per visit",
+      "description": "Take care of pets while owners are away: feeding, walking, and playtime.",
+      "category": "Pet Services"
+    },
+    {
+      "id": "6",
+      "title": "Ice Cream Server",
+      "company": "Sweet Treats",
+      "location": "Mall Food Court",
+      "ageRequirement": 15,
+      "pay": "$10.50/hr",
+      "description": "Serve customers, clean workstations, and prep toppings.",
+      "category": "Food Service"
+    },
+    {
+      "id": "7",
+      "title": "Movie Theater Attendant",
+      "company": "Starplex Cinemas",
+      "location": "CineMall 8",
+      "ageRequirement": 16,
+      "pay": "$11/hr",
+      "description": "Tear tickets, help guests, and maintain clean theaters.",
+      "category": "Entertainment"
+    },
+    {
+      "id": "8",
+      "title": "Cashier",
+      "company": "Dollar Deals",
+      "location": "Eastside Plaza",
+      "ageRequirement": 16,
+      "pay": "$12/hr",
+      "description": "Operate cash register, restock shelves, and greet customers.",
+      "category": "Retail"
+    },
+    {
+      "id": "9",
+      "title": "Landscaping Assistant",
+      "company": "Green Grounds",
+      "location": "Residential Neighborhoods",
+      "ageRequirement": 17,
+      "pay": "$14/hr",
+      "description": "Mow lawns, trim hedges, and assist with yard cleanup.",
+      "category": "Outdoor Work"
+    },
+    {
+      "id": "10",
+      "title": "Tutor (Math or Reading)",
+      "company": "Youth Learning Center",
+      "location": "Learning Hub",
+      "ageRequirement": 16,
+      "pay": "$13/hr",
+      "description": "Work one-on-one with elementary students on core subjects.",
+      "category": "Education"
+    }
+  ],
+  "applications": [
+    {
+      "id": "0505",
+      "name": "Leon Mwai",
+      "email": "leon.mwai@student.moringaschool.com",
+      "clientId": "567",
+      "dob": "2025-04-23T21:00:00.000Z",
+      "address": "408",
+      "education": "KCSE"
+    }
+  ]
+}

@@ -11,7 +11,7 @@ const ApplicationForm = () => {
     address: "",
     education: "",
   });
-  
+
   const [formMode, setFormMode] = useState("signup");
 
   const handleChange = (e) => {

@@ -1,0 +1,23 @@
+.about-us {
+    padding: 40px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .about-us .section__header {
+    margin-bottom: 20px;
+  }
+  
+  .about-us h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .about-us__content p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  

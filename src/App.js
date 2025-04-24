@@ -1,5 +1,11 @@
+// src/App.js
 import React, { useState } from "react";
-import '../src/index.css'
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import './index.css';
+import './styles.css';
+
+import ApplicationForm from './components/ApplicationForm';
+import LoginPage from './components/LoginPage'; // import the LoginPage
 
 const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,10 +22,11 @@ const Navigation = () => {
         </div>
       </div>
       <div className={`nav__links ${menuOpen ? "open" : ""}`}>
-        <a href="#home">Home</a>
-        <a href="#steps">Steps</a>
-        <a href="#explore">Explore</a>
-        <a href="#jobs">Jobs</a>
+        <Link to="/#home">Home</Link>
+        <Link to="/#steps">Steps</Link>
+        <Link to="/#explore">Explore</Link>
+        <Link to="/#jobs">Jobs</Link>
+      
       </div>
     </nav>
   );
@@ -31,24 +38,18 @@ const Header = () => {
     <header className="header__container">
       <h1>Your Job Seeker</h1>
       <h2>Welcome to Our Website</h2>
-
       <div className="header__icons">
-
         <img src="assets/twitter.png" alt="header" />
         <img src="assets/amazon.png" alt="header" />
         <img src="assets/figma.png" alt="header" />
         <img src="assets/linkedin.png" alt="header" />
-
       </div>
-
-
       <p>Join us to make your dreams come true.</p>
       <div className="header__btns">
-        <a href="#signup">Sign Up</a>
-        <a href="#login">Log In</a>
+        <Link to="/signup">Sign Up</Link>
+        <Link to="/login">Log In</Link>
       </div>
     </header>
-
   );
 };
 
@@ -57,9 +58,7 @@ const Steps = () => {
   return (
     <section id="steps">
       <div className="section__header">
-
         <h2>How It Works</h2>
-
       </div>
       <div className="steps__grid">
         <div className="steps__card">
@@ -133,9 +132,7 @@ const Explore = () => {
         <div className="explore__card">
           <span>Consulting</span>
           <h4>Consulting Services</h4>
-         
           <p>Work with us to find the right solutions tailored to your needs.</p>
-
         </div>
       </div>
     </section>
@@ -155,31 +152,31 @@ const Footer = () => {
           </p>
         </div>
         <div className="footer__coll">
-          <h4>Links</h4>
-          <div className="footer__links">
-            <a href="#home">Home</a>
-            <a href="#steps">How It Works</a>
-            <a href="#explore">Explore</a>
-            <a href="#jobs">Jobs</a> 
-          </div>
+                
         </div>
       </div>
       <div className="footer__bar">
-        <p>&copy; 2025 My Website | All rights reserved</p>
+        <p></p>
       </div>
     </footer>
   );
 };
 
+// Main App Component with Routing
 const App = () => {
   return (
-    <div className="App">
-      <Navigation />
-      <Header />
-      <Steps />
-      <Explore />
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Navigation />
+        <Header />
+        <Routes>
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<div id="signup"><h2>Sign Up</h2><ApplicationForm /></div>} />
+          <Route path="/" element={<><Steps /><Explore /></>} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 };
 
