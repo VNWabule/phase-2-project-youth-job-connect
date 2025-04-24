@@ -29,6 +29,7 @@ const Navigation = () => {
 const Header = () => {
   return (
     <header className="header__container">
+      <h1>Your Job Seeker</h1>
       <h2>Welcome to Our Website</h2>
 
       <div className="header__icons">
