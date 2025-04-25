@@ -704,12 +704,13 @@ nav {
 
 @media (width > 768px) {
   nav {
-    position: static;
+    position: sticky;
     padding: 2rem 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
+    z-index: 1000;
   }
 
   .nav__header {
@@ -722,7 +723,7 @@ nav {
   }
 
   .nav__links {
-    position: static;
+    position: sticky;
     padding: 0;
     flex-direction: row;
     justify-content: flex-end;
@@ -779,3 +780,25 @@ nav {
   align-items: center;
   align-content: center;
 }
+
+.user__info {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header__btns .btn {
+    /* Styles for buttons inside the .header__btns container */
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  
+  .header__btns .btn:hover {
+    background-color: var(--primary-color-dark);
+    box-shadow: 2px 2px 10px rgba(106, 56, 194, 0.5);
+  }
