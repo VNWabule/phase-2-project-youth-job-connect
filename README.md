@@ -38,7 +38,7 @@
    npm start
 
 ## 🧠 Future Improvements
-- Add user login and authentication
+- Add user authentication
 - Upload resumes or attachments with applications
 - Admin dashboard for managing job posts and reviewing applications
 
