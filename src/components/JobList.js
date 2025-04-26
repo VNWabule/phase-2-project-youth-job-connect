@@ -8,12 +8,12 @@ function JobList() {
   const [minPay, setMinPay] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:3000/jobs')
+    fetch('http://localhost:3001/jobs')
       .then((res) => res.json())
       .then((data) => setJobs(data))
       .catch((err) => console.error("Error fetching jobs:", err));
 
-    fetch('http://localhost:3000/applications')
+    fetch('http://localhost:3001/applications')
       .then((res) => res.json())
       .then((data) => setApplications(data))
       .catch((err) => console.error("Error fetching applications:", err));
