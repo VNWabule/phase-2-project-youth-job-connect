@@ -12,6 +12,7 @@ const Login = ({ registeredUser, onLogin }) => {
             email === registeredUser.email &&
             password === registeredUser.password
         ) {
+            localStorage.setItem('userLoggedIn', 'true');
             onLogin(registeredUser);
         } else {
             setError("Invalid email or password.");

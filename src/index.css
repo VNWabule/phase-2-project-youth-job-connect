@@ -802,3 +802,13 @@ nav {
     background-color: var(--primary-color-dark);
     box-shadow: 2px 2px 10px rgba(106, 56, 194, 0.5);
   }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white; /* or your nav color */
+    z-index: 1000; /* make sure it stays above other stuff */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* optional: a little shadow looks nice */
+  }
+  

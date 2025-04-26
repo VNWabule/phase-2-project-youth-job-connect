@@ -12,31 +12,31 @@ const Navigation = ({ user, onLogout }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-      <nav>
-          <div className="nav__header">
-              <span className="logo">Youthjob<span>-Connect</span></span>
-              {user && (
-                  <div className="user__info">
-                      <span className="username">Welcome, {user.name}</span>
-                      <button className="btn" onClick={onLogout}>Log Out</button>
-                  </div>
-              )}
-              <div className="nav__menu__btn" onClick={() => setMenuOpen(!menuOpen)}>
-                  ☰
-              </div>
+    <nav className="navbar">
+      <div className="nav__header">
+        <span className="logo">Youthjob<span>-Connect</span></span>
+        {user && (
+          <div className="user__info">
+            <span className="username">Welcome, {user.name}</span>
+            <button className="btn" onClick={onLogout}>Log Out</button>
           </div>
-          <div className={`nav__links ${menuOpen ? "open" : ""}`}>
-              <a href="#home">Home</a>
-              <a href="#steps">Steps</a>
-              <a href="#explore">Explore</a>
-              <a href="#jobs">Jobs</a>
-          </div>
-      </nav>
+        )}
+        <div className="nav__menu__btn" onClick={() => setMenuOpen(!menuOpen)}>
+          ☰
+        </div>
+      </div>
+      <div className={`nav__links ${menuOpen ? "open" : ""}`}>
+        <a href="#home">Home</a>
+        <a href="#steps">Steps</a>
+        <a href="#explore">Explore</a>
+        <a href="#jobs">Jobs</a>
+      </div>
+    </nav>
   );
 };
 
 // Header
-const Header = ({ setUser, user, setRegisteredUser, registeredUser }) => {
+const Header = ({ setUser, user, setRegisteredUser, registeredUser, setIsLoggedIn, isLoggedIn }) => {
   const [showSignup, setShowSignup] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
 
@@ -88,7 +88,15 @@ const Header = ({ setUser, user, setRegisteredUser, registeredUser }) => {
           <button className="close__btn" onClick={toggleLogin}>X</button>
           <h3>Log In</h3>
           <Login
-            registeredUser={registeredUser} onLogin={setUser} />
+            registeredUser={registeredUser}
+            onLogin={(user) => {
+              setUser(user);
+              setIsLoggedIn(true);
+              localStorage.setItem('userLoggedIn', 'true')
+            }}
+          />
+
+
         </div>
       )}
     </header>
@@ -184,8 +192,13 @@ const Footer = () => {
 // App
 const App = () => {
   const [user, setUser] = useState(null);
-
   const [registeredUser, setRegisteredUser] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const loggedIn = localStorage.getItem('userLoggedIn') === 'true';
+    setIsLoggedIn(loggedIn);
+  }, []);
 
   useEffect(() => {
     const savedRegisteredUser = localStorage.getItem("registeredUser");
@@ -206,10 +219,12 @@ const App = () => {
 
   const handleLogin = (user) => {
     setUser(user);
+    setIsLoggedIn(true);
     localStorage.setItem("loggedInUser", JSON.stringify(user));
   };
   const handleLogout = () => {
     setUser(null);
+    setIsLoggedIn(false);
     localStorage.removeItem("loggedInUser");
   };
 
@@ -222,11 +237,15 @@ const App = () => {
           setUser={handleLogin}
           registeredUser={registeredUser}
           setRegisteredUser={handleSignup}
+          setIsLoggedIn={setIsLoggedIn}
+          isLoggedIn={isLoggedIn}
         />
         <Steps />
         <Explore />
+        <section id="jobs">
         <JobCard />
         <JobList />
+        </section>
         <Footer />
       </div>
     </Router>

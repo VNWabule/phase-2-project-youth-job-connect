@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import JobCard from './JobCard';
 
 function JobList() {
   const [jobs, setJobs] = useState([]);
@@ -6,6 +7,26 @@ function JobList() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCompany, setSelectedCompany] = useState('');
   const [minPay, setMinPay] = useState('');
+  const [selectedJobId, setSelectedJobId] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const loggedIn = localStorage.getItem('userLoggedIn') === 'true'; 
+    setIsLoggedIn(loggedIn);
+    console.log("Is logged in:", loggedIn);
+  }, []);
+
+  const handleCardClick = (jobId) => {
+    setSelectedJobId((prevId) => (prevId === jobId ? null : jobId)); 
+  };
+
+  const handleApplyClick = (jobId) => {
+    if (isLoggedIn) {
+      alert(`Applying for job ${jobId}`);
+    } else {
+      alert('Please log in to apply.');
+    }
+  };
 
   useEffect(() => {
     fetch('http://localhost:3001/jobs')
@@ -103,15 +124,27 @@ function JobList() {
       {/* Job List Section */}
       <div style={{ flex: 1 }}>
         <h1>Available Jobs</h1>
-        <ul>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem' }}>
           {filteredJobs.map((job) => (
-            <li key={job.id}>
-              <strong>{job.title}</strong> at {job.company} - {job.pay}
-            </li>
+            <JobCard 
+              key={job.id}
+              job={job}
+              isSelected={selectedJobId === job.id}
+              onCardClick={() => handleCardClick(job.id)}
+            >
+              {/* Conditionally render Apply button inside the JobCard */}
+              <div style={{ marginTop: '1rem' }}>
+                {isLoggedIn ? (
+                  <button onClick={() => handleApplyClick(job.id)}>Apply</button>
+                ) : (
+                  <button disabled>Please log in to apply</button>
+                )}
+              </div>
+            </JobCard>
           ))}
-        </ul>
+        </div>
 
-        <h2>Applications</h2>
+        <h2 style={{ marginTop: '2rem' }}>Applications</h2>
         <ul>
           {applications.length === 0 ? (
             <li>No applications yet.</li>
