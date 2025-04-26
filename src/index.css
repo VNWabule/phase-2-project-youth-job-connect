@@ -632,6 +632,7 @@ nav {
 .footer__container {
   display: grid;
   gap: 4rem 2rem;
+  background-color: var(--primary-color);
 }
 
 .footer__logo {
@@ -641,36 +642,16 @@ nav {
 .footer__col p {
   max-width: 400px;
   color: var(--text-light);
+  color: var(--white);
 }
 
-.footer__coll h4 {
+.footer__col h4 {
   margin-bottom: 2rem;
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--text-dark);
-  display: flex;
-  align-items: center;
+  color: var(--white);
   gap: 1rem;
-  justify-content: end;
-
-}
-
-.footer__links {
-  display: grid;
-  gap: 1rem;
-  text-align: right;
-}
-
-.footer__links a {
-  color: var(--text-light);
-}
-
-.footer__links a:hover {
-  color: var(--primary-color);
-}
-
-.footer__links a span {
-  font-size: 1.25rem;
+  
 }
 
 .footer__bar {
@@ -678,6 +659,7 @@ nav {
   font-size: 0.9rem;
   color: var(--text-light);
   text-align: center;
+
 }
 
 @media (width > 540px) {

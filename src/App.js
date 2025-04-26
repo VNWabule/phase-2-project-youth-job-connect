@@ -5,6 +5,7 @@ import JobList from "./components/JobList";
 import JobCard from "./components/JobCard";
 import ApplicationForm from "./components/ApplicationForm";
 import { BrowserRouter as Router } from "react-router-dom";
+import NavBar from "./components/NavBar";
 
 
 // Navigation
@@ -173,15 +174,6 @@ const Footer = () => {
             Join us today and take your business to the next level.
           </p>
         </div>
-        <div className="footer__coll">
-          <h4>Links</h4>
-          <div className="footer__links">
-            <a href="#home">Home</a>
-            <a href="#steps">How It Works</a>
-            <a href="#explore">Explore</a>
-            <a href="#jobs">Jobs</a>
-          </div>
-        </div>
       </div>
       <div className="footer__bar">
         <p>&copy; 2025 My Website | All rights reserved</p>
@@ -231,6 +223,7 @@ const App = () => {
   return (
     <Router>
       <div className="App">
+        <NavBar />
         <Navigation user={user} onLogout={handleLogout} />
         <Header
           user={user}
